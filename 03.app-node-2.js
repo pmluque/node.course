@@ -12,7 +12,8 @@ const argv = require('yargs')
             default: 10
         }
     })
-    .command('crear', 'Crear fichero de la tabla multiplicar base de 1 a limite', {
+
+.command('crear', 'Crear fichero de la tabla multiplicar base de 1 a limite', {
         base: {
             demand: true,
             alias: 'b',

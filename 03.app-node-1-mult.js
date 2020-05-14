@@ -6,6 +6,8 @@ const colorsafe = require('colors/safe');
 /* Variables */
 let data = '';
 
+
+
 /* Métodos */
 
 // 1ª forma de declarar un módulo

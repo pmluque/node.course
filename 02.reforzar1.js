@@ -317,50 +317,50 @@ getEmpleadoPromesa(3).then(empleado => {
 
 console.log('ASYNC/AWAIT - Promesas en cadena');
 let getNombreAA = () => {
-    return 'ASYNC/AWAIT - Pedro';
-}
-
-console.log(getNombreAA());
+        return 'ASYNC/AWAIT - Pedro';
 
 
-let getNombreAA2 = async() => {
-    // PROVOCAR UN ERROR: undefined.nombre;
-    throw new Error('No existe data');
+        console.log(getNombreAA());
 
-    return 'ASYNC/AWAIT2 - Pedro';
-}
 
-//console.log(getNombreAA2());
-/*
-getNombreAA2().then(nombre => {
-    console.log('getNombreAA2', nombre);
-}).catch(error => {
-    // console.log('getNombreAA2', error);  -- error incluye toda la trza
-    console.log('ERROR getNombreAA2', error);
-});
-*/
+        let getNombreAA2 = async() => {
+            // PROVOCAR UN ERROR: undefined.nombre;
+            throw new Error('No existe data');
 
-// async-await
-let getData = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('Data1');
-        }, 2000);
-    });
-}
-let datos = async() => {
+            return 'ASYNC/AWAIT2 - Pedro';
+        }
 
-    let data = await getData();
-    // devuelve promesa, pero en vez de .then, uso await
-    // Hay que garantizar que devuelva algo !!!
-    // El getDAta devuelve una promesa, el await espera hasta que se recoja y así cuando baja de linea ya se puede usar
+        //console.log(getNombreAA2());
+        /*
+        getNombreAA2().then(nombre => {
+            console.log('getNombreAA2', nombre);
+        }).catch(error => {
+            // console.log('getNombreAA2', error);  -- error incluye toda la trza
+            console.log('ERROR getNombreAA2', error);
+        });
+        */
 
-    return `>>>> Data = ${ data }`;
+        // async-await
+        let getData = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Data1');
+                }, 2000);
+            });
+        }
+        let datos = async() => {
 
-};
+            let data = await getData();
+            // devuelve promesa, pero en vez de .then, uso await
+            // Hay que garantizar que devuelva algo !!!
+            // El getDAta devuelve una promesa, el await espera hasta que se recoja y así cuando baja de linea ya se puede usar
 
-datos().then(data => {
-    console.log(data);
-});
+            return `>>>> Data = ${ data }`;
 
-// VER SIGUIENTE EJERCICIO PARA VER EL ASYNC-AWAIT APLICADO A LLAMADAS DE PROMESAS CONCATENADAS.
+        };
+
+        datos().then(data => {
+            console.log(data);
+        });
+
+        // VER SIGUIENTE EJERCICIO PARA VER EL ASYNC-AWAIT APLICADO A LLAMADAS DE PROMESAS CONCATENADAS.
