@@ -1,3 +1,4 @@
 node_modules/
 ficheros/*.txt
+ficheros/*.json
 *.txt
